@@ -1,4 +1,4 @@
 # neovim-config
 
 ## Install
-Run the ```install.sh```, this will link [vim config file](nvim/init.vim) to this repo.
+Run the ```install.sh```, this will link [vim config file](nvim/init.vim) to this repo. Then open ```vim``` and run ```:PlugInstall```
