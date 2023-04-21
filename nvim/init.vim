@@ -10,12 +10,12 @@ Plug 'nvim-neo-tree/neo-tree.nvim'
 Plug 'kevinhwang91/rnvimr'
 nnoremap <silent> <F10> :RnvimrToggle<CR>
 
-" FZF useful commands, 
+" FZF useful commands, open relative file browser with F12
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 nnoremap <silent> <F12> :Files<CR>
 
-" Vista file navigation plugin
+" Vista file navigation plugin, toggle with F11
 Plug 'liuchengxu/vista.vim'
 nnoremap <silent> <F11> :Vista!!<CR>
 
