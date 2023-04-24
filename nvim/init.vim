@@ -8,7 +8,7 @@ Plug 'nvim-neo-tree/neo-tree.nvim'
 
 " Ranger in vim, toggle with F10
 Plug 'kevinhwang91/rnvimr'
-nnoremap <silent> <F10> :RnvimrToggle<CR>
+nnoremap <silent> <F11> :RnvimrToggle<CR>
 
 " FZF useful commands, open relative file browser with F12
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -17,7 +17,7 @@ nnoremap <silent> <F12> :Files<CR>
 
 " Vista file navigation plugin, toggle with F11
 Plug 'liuchengxu/vista.vim'
-nnoremap <silent> <F11> :Vista!!<CR>
+nnoremap <silent> <F10> :Vista!!<CR>
 
 " CoC plugin, more useful commands and plugins
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
