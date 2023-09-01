@@ -1,5 +1,5 @@
-set number
-
+set relativenumber number
+let g:python3_host_prog = '/usr/local/bin/python3'
 " Use custom theme 
 colorscheme sunbather
 
