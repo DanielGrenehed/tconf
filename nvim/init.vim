@@ -4,6 +4,8 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 colorscheme sunbather
 
 call plug#begin()
+Plug 'navarasu/onedark.nvim'
+
 Plug 'nvim-neo-tree/neo-tree.nvim'
 
 " Ranger in vim, toggle with F10
@@ -28,5 +30,7 @@ highlight link RnvimrNormal CursorLine
 
 call plug#end()
 
+let g:onedark_config = {'style':'deep'}
+colorscheme onedark
 " Enable syntax highlighting in markdown
 let g:markdown_fenced_languages = ['html', 'python', 'cpp', 'c', 'rust', 'vim']
