@@ -5,7 +5,10 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 sudo apt-get install -y snapd universal-ctags ranger
 sudo snap install node --classic
-sudo snap install --beta nvim --classic
+
+git clone https://github.com/neovim/neovim
+(cd neovim && make && sudo make install)
+# sudo snap install --beta nvim --classic
 mkdir -p ~/.config
 mkdir -p ~/.config/nvim
 
