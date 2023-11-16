@@ -9,5 +9,6 @@ alias cdgh='cd $HOME/github'
 
 alias cbail='cmake build . && make all && sudo make install && sudo ldconfig'
 
+export EDITOR='nvim'
 alias vim='nvim'
 

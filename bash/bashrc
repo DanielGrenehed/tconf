@@ -18,13 +18,19 @@ HISTFILESIZE=2000
 
 ## prompt
 
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-	remote=yes
-else
-	case $(ps -o comm= -p $PPID) in
-		sshd|*/sshd) remote=yes;;
-	esac
+# test if on android
+android=`uname -a|grep android`
+if [ -z "$android" ]; then
+	# test if in ssh session
+	if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+		remote=yes
+	else
+		case $(ps -o comm= -p $PPID) in
+			sshd|*/sshd) remote=yes;;
+		esac
+	fi
 fi
+unset android
 
 # set chroot identifier
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
@@ -82,7 +88,6 @@ if ! shopt -oq posix; then
 		. /etc/bash_completion
 	fi
 fi
-cd
 
 if [ -f ~/.bash_aliases ]; then
 	. ~/.bash_aliases
