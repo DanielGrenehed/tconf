@@ -1,7 +1,11 @@
 #!/bin/bash
 # install dependencies
-sudo apt-get install -y universal-ctags ranger make cmake gettext tmux
 
+packages='universal-ctags ranger make cmake gettext tmux'
+
+if [ -x "$(command -v apt-get)" ]; then sudo apt-get install -y $packages
+elif [ -x "$(command -v brew)" ]; then brew install $packages
+else echo "Failed to install packages: Package manager not found! could not install ($packages)" >&2;fi
 # install node using nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 source ~/.bashrc
