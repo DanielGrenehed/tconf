@@ -3,6 +3,7 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 " Use custom theme 
 colorscheme sunbather
 
+nnoremap <silent> <F6> :tabnew<CR>
 call plug#begin()
 Plug 'navarasu/onedark.nvim'
 
