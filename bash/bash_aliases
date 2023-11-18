@@ -7,6 +7,12 @@ alias alert='notify-send --urgency=low -i "$([$? =0 ) && echo terminal || echo e
 alias cd..='cd ..'
 alias cdgh='cd $HOME/github'
 
+alias ga='git add'
+alias gc='git commit -m'
+alias gs='git status'
+alias gd='git diff'
+alias gpl='git pull'
+alias gph='git push'
 alias cbail='cmake build . && make all && sudo make install && sudo ldconfig'
 
 export EDITOR='nvim'
