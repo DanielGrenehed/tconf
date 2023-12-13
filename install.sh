@@ -1,7 +1,7 @@
 #!/bin/bash
 # install dependencies
 
-packages='universal-ctags ranger make cmake gettext tmux'
+packages='universal-ctags ranger make cmake gettext tmux xclip'
 
 if [ -x "$(command -v apt-get)" ]; then sudo apt-get install -y $packages
 elif [ -x "$(command -v brew)" ]; then brew install $packages
