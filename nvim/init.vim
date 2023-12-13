@@ -8,7 +8,7 @@ colorscheme sunbather
 call plug#begin()
 Plug 'navarasu/onedark.nvim'
 
-" Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-tree/nvim-tree.lua'
 
 " FZF useful commands, open relative file browser with F12
@@ -22,7 +22,7 @@ Plug 'liuchengxu/vista.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
-
+:lua require("nvim-web-devicons")
 :lua require("nvim-tree").setup()
 
 nnoremap <silent> <F12> :NvimTreeToggle<CR>
@@ -34,6 +34,12 @@ nnoremap <silent> <S-Del> :q<CR>
 
 nnoremap <silent> <F1> :Files<CR>
 nnoremap <silent> <F13> :GFiles<CR>
+
+nnoremap <silent> ¶ :wincmd h<CR>
+nnoremap <silent> ŧ :wincmd l<CR>
+nnoremap <silent> đ :wincmd k<CR>
+nnoremap <silent> ß :wincmd j<CR>
+
 let g:onedark_config = {'style':'deep'}
 colorscheme onedark
 " Enable syntax highlighting in markdown
