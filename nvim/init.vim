@@ -1,36 +1,39 @@
-set relativenumber number
+set number
+set relativenumber
+
 let g:python3_host_prog = '/usr/local/bin/python3'
 " Use custom theme 
 colorscheme sunbather
 
-nnoremap <silent> <F6> :tabnew<CR>
 call plug#begin()
 Plug 'navarasu/onedark.nvim'
 
-Plug 'nvim-neo-tree/neo-tree.nvim'
-
-" Ranger in vim, toggle with F10
-Plug 'kevinhwang91/rnvimr'
-nnoremap <silent> <F11> :RnvimrToggle<CR>
+" Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-tree/nvim-tree.lua'
 
 " FZF useful commands, open relative file browser with F12
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-nnoremap <silent> <F12> :Files<CR>
 
 " Vista file navigation plugin, toggle with F11
 Plug 'liuchengxu/vista.vim'
-nnoremap <silent> <F10> :Vista!!<CR>
 
 " CoC plugin, more useful commands and plugins
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Color ranger border
-let g:rnvimr_border_attr = {'fg': 204, 'bg': -1}
-highlight link RnvimrNormal CursorLine
-
 call plug#end()
 
+:lua require("nvim-tree").setup()
+
+nnoremap <silent> <F12> :NvimTreeToggle<CR>
+nnoremap <silent> <F24> :Vista!!<CR>
+
+nnoremap <silent> <F6> :tabnew<CR>
+nnoremap <silent> <F18> :vsplit<CR>
+nnoremap <silent> <S-Del> :q<CR>
+
+nnoremap <silent> <F1> :Files<CR>
+nnoremap <silent> <F13> :GFiles<CR>
 let g:onedark_config = {'style':'deep'}
 colorscheme onedark
 " Enable syntax highlighting in markdown
