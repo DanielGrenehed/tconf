@@ -41,6 +41,11 @@ nnoremap <silent> ŧ :wincmd l<CR>
 nnoremap <silent> đ :wincmd k<CR>
 nnoremap <silent> ß :wincmd j<CR>
 
+nnoremap <silent> Ŧ :vertical resize +1<CR>
+nnoremap <silent> ® :vertical resize -1<CR>
+nnoremap <silent> ª :resize +1<CR>
+nnoremap <silent> § :resize -1<CR>
+
 let g:onedark_config = {'style':'deep'}
 colorscheme onedark
 " Enable syntax highlighting in markdown
