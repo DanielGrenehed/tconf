@@ -11,10 +11,13 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
 echo "Linking"
 /bin/bash link.sh
-
 source ~/.bashrc
+
 echo "Installing node"
 nvm install v16.20.2
+
+echo "Installing rust"
+curl https://sh.rustup.rs -sSf | sh
 
 echo "Downloading neovim source"
 git clone https://github.com/neovim/neovim
