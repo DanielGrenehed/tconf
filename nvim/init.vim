@@ -36,6 +36,11 @@ nnoremap <silent> <S-Del> :q<CR>
 nnoremap <silent> <F1> :Files<CR>
 nnoremap <silent> <F13> :GFiles<CR>
 
+nnoremap <silent> <M-Left> :wincmd h<CR>
+nnoremap <silent> <M-Right> :wincmd l<CR>
+nnoremap <silent> <M-Up> :wincmd k<CR>
+nnoremap <silent> <M-Down> :winmd j<CR>
+
 nnoremap <silent> ¶ :wincmd h<CR>
 nnoremap <silent> ŧ :wincmd l<CR>
 nnoremap <silent> đ :wincmd k<CR>
