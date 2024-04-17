@@ -11,5 +11,6 @@ ln -f nvim/colors/sunbather.vim ~/.config/nvim/colors/sunbather.vim
 ln -f tmux/tmux.conf ~/.tmux.conf
 ln -f bash/bash_aliases ~/.bash_aliases
 ln -f bash/bashrc ~/.bashrc
+ln -f bash/bash_profile ~/.bash_profile
 
 . ~/.bashrc
