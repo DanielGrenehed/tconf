@@ -1,13 +1,14 @@
 set number
 set relativenumber
 set colorcolumn=80
+highlight Normal ctermbg=NONE guibg=NONE
 
 let g:python3_host_prog = '/usr/local/bin/python3'
 " Use custom theme 
-colorscheme sunbather
+" colorscheme sunbather
 
 call plug#begin()
-Plug 'navarasu/onedark.nvim'
+" Plug 'navarasu/onedark.nvim'
 
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-tree/nvim-tree.lua'
@@ -51,7 +52,19 @@ nnoremap <silent> ® :vertical resize -1<CR>
 nnoremap <silent> ª :resize +1<CR>
 nnoremap <silent> § :resize -1<CR>
 
-let g:onedark_config = {'style':'deep'}
-colorscheme onedark
+nnoremap <silent> ® :wincmd h<CR>
+nnoremap <silent> þ :wincmd l<CR>
+nnoremap <silent> đ :wincmd k<CR>
+nnoremap <silent> ß :wincmd j<CR>
+
+nnoremap <silent> ™ :vertical resize +1<CR>
+nnoremap <silent> Þ :vertical resize -1<CR>
+nnoremap <silent> ª :resize +1<CR>
+nnoremap <silent> ẞ :resize -1<CR>
+
+
+
+"let g:onedark_config = {'style':'deep'}
+" colorscheme onedark
 " Enable syntax highlighting in markdown
 let g:markdown_fenced_languages = ['html', 'python', 'cpp', 'c', 'rust', 'vim']
