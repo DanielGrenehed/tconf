@@ -59,3 +59,25 @@ vim.cmd([[
 	nnoremap <silent> ª :resize +1<CR>
 	nnoremap <silent> ẞ :resize -1<CR>
 ]])
+function sys_command(command) 
+	local handle = io.popen(command)
+	local result = handle:read("*a")
+	handle.close()
+	return result
+end 
+
+local virt = sys_command("systemd-detect-virt")
+
+
+if string.find(virt, "wsl") then
+	vim.cmd([[
+		nnoremap <silent> <C-r> :wincmd h<CR>
+		nnoremap <silent> <C-t> :wincmd l<CR>
+		nnoremap <silent> <C-f> :wincmd k<CR>
+		nnoremap <silent> <C-s> :wincmd j<CR>
+	]])
+else
+	print("no wsl!")
+end
+
+
