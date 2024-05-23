@@ -34,11 +34,6 @@ vim.cmd([[
 	nnoremap <silent> <F1> :Files<CR>
 	nnoremap <silent> <F13> :GFiles<CR>
 
-	nnoremap <silent> <M-Left> :wincmd h<CR>
-	nnoremap <silent> <M-Right> :wincmd l<CR>
-	nnoremap <silent> <M-Up> :wincmd k<CR>
-	nnoremap <silent> <M-Down> :winmd j<CR>
-
 	nnoremap <silent> ¶ :wincmd h<CR>
 	nnoremap <silent> ŧ :wincmd l<CR>
 	nnoremap <silent> đ :wincmd k<CR>
@@ -75,9 +70,22 @@ if string.find(virt, "wsl") then
 		nnoremap <silent> <C-t> :wincmd l<CR>
 		nnoremap <silent> <C-f> :wincmd k<CR>
 		nnoremap <silent> <C-s> :wincmd j<CR>
+ 	]])
+elseif string.find(sys_command("echo $OSTYPE"), "darwin") then 
+	vim.cmd([[
+		nnoremap <silent> <M-Left> :wincmd h<CR>
+		nnoremap <silent> <M-Right> :wincmd l<CR>
+		nnoremap <silent> <M-Up> :wincmd k<CR>
+		nnoremap <silent> <M-Down> :winmd j<CR>
+
+		nnoremap <silent> <M-S-Left> :vertical resize +1<CR>
+		nnoremap <silent> <M-S-Right> :vertical resize -1<CR>
+		nnoremap <silent> <M-S-Up> :resize +1<CR>
+		nnoremap <silent> <M-S-Down> :resize -1<CR>
+
 	]])
-else
-	print("no wsl!")
+else 
+	print("no mapping for non-wsl non-darwin")
 end
 
 
