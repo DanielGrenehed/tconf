@@ -42,15 +42,20 @@ local virt = sys_command("systemd-detect-virt")
 local ostype = sys_command("echo $OSTYPE")
 
 
-
 -- per system keybindings
 if string.find(virt, "wsl") then
-	vim.cmd([[
-		nnoremap <silent> <C-S-Left> :wincmd h<CR>
-		nnoremap <silent> <C-S-Right> :wincmd l<CR>
-		nnoremap <silent> <C-S-Up> :wincmd k<CR>
-		nnoremap <silent> <C-S-Down> :wincmd j<CR>
- 	]])
+	vim.cmd([[	
+		map <silent> <F7> :wincmd h<CR>
+		map <silent> <F9> :wincmd l<CR>
+		map <silent> <F19> :wincmd k<CR>
+		map <silent> <F21> :wincmd j<CR>
+
+		map <silent> <S-Left> :vertical resize +1<CR>
+		map <silent> <S-Right> :vertical resize -1<CR>
+		map <silent> <S-Up> :resize +1<CR>
+		map <silent> <S-Down> :resize -1<CR>
+	]])
+	print("hello")
 elseif string.find(ostype, "darwin") then 
 	vim.cmd([[
 		nnoremap <silent> <M-Left> :wincmd h<CR>
@@ -76,7 +81,5 @@ else
 		nnoremap <silent> <M-S-Right> :vertical resize -1<CR>
 		nnoremap <silent> <M-S-Up> :resize +1<CR>
 		nnoremap <silent> <M-S-Down> :resize -1<CR>
-
 	]])
 end
-
