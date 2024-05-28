@@ -40,6 +40,7 @@ vim.cmd([[
 	map <silent> <S-Right> :vertical resize -1<CR>
 	map <silent> <S-Up> :resize +1<CR>
 	map <silent> <S-Down> :resize -1<CR>
+	map <F23> :%!prettier --stdin-filepath %<CR> 
 ]])
 
 function sys_command(command) 
