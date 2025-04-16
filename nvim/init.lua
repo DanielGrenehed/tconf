@@ -3,8 +3,8 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin')
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-tree/nvim-tree.lua'
---Plug 'liuchengxu/vista.vim'
-Plug('neoclide/coc.nvim', {branch = 'release'})
+Plug('junegunn/fzf', { ['do'] = function() vim.fn['fzf#install']() end })
+Plug 'junegunn/fzf.vim'
 vim.call('plug#end')
 
 require('nvim-web-devicons')
@@ -20,6 +20,7 @@ require('nvim-tree').setup({
   },
 })
 
+vim.g.fzf_ag_command = 'ag -w -Q --ignore node_modules --ignore .git'
 
 -- core vim config
 vim.cmd([[
@@ -38,11 +39,11 @@ vim.g.python3_host_prog = '/usr/local/bin/python3'
 vim.g.markdown_fenced_languages = {'html', 'python', 'cpp', 'c', 'rust', 'vim', 'go'}
 
 
--- map <silent> <F24> :Vista!!<CR>
-
 -- default mapping on all systems
 vim.cmd([[
 	nnoremap <silent> <F12> :NvimTreeToggle<CR>
+  nnoremap <silent> <F22> :Files<CR>
+  nnoremap <silent> <F10> :Ag<CR>
 
 	nnoremap <silent> <F6> :tabnew<CR>
 	nnoremap <silent> <F18> :vsplit<CR>
@@ -59,6 +60,7 @@ vim.cmd([[
 	map <silent> <S-Down> :resize -1<CR>
 	map <F23> :%!prettier --stdin-filepath %<CR> 
 ]])
+
 
 --[[
 function sys_command(command) 
