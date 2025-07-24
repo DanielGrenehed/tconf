@@ -15,6 +15,7 @@ alias gpl='git pull'
 alias gph='git push'
 alias cbail='cmake build . && make all && sudo make install && sudo ldconfig'
 alias shares='cd /run/user/1000/gvfs'
+alias tmuxf='tmux new -s ${PWD##*/}'
 
 export EDITOR='nvim'
 alias vim='nvim'

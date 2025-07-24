@@ -13,6 +13,7 @@ ln -f nvim/init.lua ~/.config/nvim/init.lua
 ln -f nvim/colors/sunbather.vim ~/.config/nvim/colors/sunbather.vim
 
 ln -f tmux/tmux.conf ~/.tmux.conf
+tmux source-file ~/.tmux.conf
 
 ln -f alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml
 ln -f alacritty/themes/*.toml ~/.config/alacritty/themes/
