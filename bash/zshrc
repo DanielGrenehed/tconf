@@ -4,7 +4,7 @@ precmd() { vcs_info }
 zstyle ':vcs_info:git:*' formats '%b '
 
 setopt PROMPT_SUBST
-PROMPT='%F{green}%*%f - %n %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
+PROMPT='%F{green}%D{%H:%M:%S}%f - %n %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
 
 if [ -x /usr/bin/dircolors ]; then
 	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -29,3 +29,11 @@ export NVM_DIR="$HOME/.nvm"
 . "$HOME/.cargo/env"
 
 export PATH="$PATH:$HOME/.composer/vendor/bin"
+
+export ANDROID_HOME="/Users/danielgreenehed/Library/Android/sdk"
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# sst
+export PATH=/Users/danielgreenehed/.sst/bin:$PATH
