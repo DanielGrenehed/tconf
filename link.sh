@@ -11,6 +11,7 @@ mkdir -p ~/.config/scripts
 
 ln -f nvim/init.lua ~/.config/nvim/init.lua
 ln -f nvim/colors/sunbather.vim ~/.config/nvim/colors/sunbather.vim
+ln -f nvim/agignore ~/.agignore
 
 ln -f tmux/tmux.conf ~/.tmux.conf
 tmux source-file ~/.tmux.conf
