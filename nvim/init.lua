@@ -5,6 +5,8 @@ Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug('junegunn/fzf', { ['do'] = function() vim.fn['fzf#install']() end })
 Plug 'junegunn/fzf.vim'
+Plug 'shaunsingh/nord.nvim'
+Plug 'sainnhe/sonokai'
 vim.call('plug#end')
 
 require('nvim-web-devicons')
@@ -20,7 +22,6 @@ require('nvim-tree').setup({
   },
 })
 
-vim.g.fzf_ag_command = 'ag -w -Q --ignore node_modules --ignore .git'
 
 -- core vim config
 vim.cmd([[
@@ -38,6 +39,10 @@ vim.cmd([[
 vim.g.python3_host_prog = '/usr/local/bin/python3'
 vim.g.markdown_fenced_languages = {'html', 'python', 'cpp', 'c', 'rust', 'vim', 'go'}
 
+-- theme
+vim.g.sonokai_style = 'maia'
+vim.g.sonokai_better_performance = 1
+vim.cmd[[colorscheme sonokai]]
 
 -- default mapping on all systems
 vim.cmd([[

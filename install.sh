@@ -6,6 +6,7 @@ packages='universal-ctags ranger make cmake gettext tmux xclip gcc-multilib silv
 if [ -x "$(command -v apt-get)" ]; then sudo apt-get install -y $packages
 elif [ -x "$(command -v brew)" ]; then brew install $packages
 elif [ -x "$(command -v yay)" ]; then yay -S $packages
+elif [ -x "$(command -v dnf)" ]; then sudo dnf install ranger make cmake gettext tmux xclip gcc the_silver_searcher
 else echo "Failed to install packages: Package manager not found! could not install ($packages)" >&2;fi
 # install node using nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash

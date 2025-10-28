@@ -41,7 +41,7 @@ case "$TERM" in
 	xterm-color|*-256color) color_prompt=yes;;
 esac
 
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
 	if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -104,3 +104,4 @@ export NVM_DIR="$HOME/.nvm"
 
 # Created by `pipx` on 2025-07-09 20:13:47
 export PATH="$PATH:/home/weirddan/.local/bin"
+clear
