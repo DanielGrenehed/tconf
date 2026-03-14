@@ -7,7 +7,7 @@ if [ -x "$(command -v apt-get)" ]; then sudo apt-get install -y $packages
 elif [ -x "$(command -v brew)" ]; then brew install $packages
 elif [ -x "$(command -v yay)" ]; then yay -S $packages
 elif [ -x "$(command -v dnf)" ]; then sudo dnf install ranger make cmake gettext tmux xclip gcc the_silver_searcher
-else echo "Failed to install packages: Package manager not found! could not install ($packages)" >&2;fi
+else echo "Failed to install packages: Package manager not found! could not install ($packages)\n" >&2;fi
 
 
 read -sp "Install node (y/N)? " choice
