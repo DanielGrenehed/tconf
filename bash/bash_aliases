@@ -17,6 +17,10 @@ alias cbail='cmake build . && make all && sudo make install && sudo ldconfig'
 alias shares='cd /run/user/1000/gvfs'
 alias tmuxf='tmux new -s ${PWD##*/}'
 
+alias vo-build='/Users/danielgreenehed/github/vo-utils/build.sh'
+alias vo-update='/Users/danielgreenehed/github/vo-utils/update-repo.sh'
+alias vo-log='cd ~/github/LogCat && npm start ~/Bitbucket/vo-app/storage/logs/laravel.log'
+
 export EDITOR='nvim'
 alias vim='nvim'
 alias :q='exit'

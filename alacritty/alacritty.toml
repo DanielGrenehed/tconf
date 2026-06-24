@@ -2,4 +2,4 @@ import = [ "~/.config/alacritty/themes/nordfox.toml" ]
 
 [font]
 normal = {family="DroidSansM Nerd Font Mono", style="Regular"}
-size = 20.0
+size = 14.0
