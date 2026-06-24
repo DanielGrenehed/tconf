@@ -37,3 +37,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # sst
 export PATH=/Users/danielgreenehed/.sst/bin:$PATH
+export EDITOR=nvim
+export VISUAL="$EDITOR"
