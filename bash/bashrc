@@ -93,6 +93,10 @@ if [ -f ~/.bash_aliases ]; then
 	. ~/.bash_aliases
 fi
 
+if [ -f ~/.bash_local ]; then
+  . ~/.bash_local
+fi
+
 if [ -f ~/.bash_exports ]; then
 	. ~/.bash_exports
 fi
@@ -105,3 +109,4 @@ export NVM_DIR="$HOME/.nvm"
 # Created by `pipx` on 2025-07-09 20:13:47
 export PATH="$PATH:/home/weirddan/.local/bin"
 clear
+export PATH="/home/weirddan/github/Odin:$PATH"
