@@ -41,4 +41,21 @@ case "$choice" in
 esac
 echo "\n"
 
+read -sp "Link hyprland & waybar (Y/n)? " choice
+case "$choice" in
+  n|N ) ;;
+  y|Y|* )
+    mkdir -p ~/.config/hypr
+    mkdir -p ~/.config/waybar
+
+
+    ln -f hypr/hyprland.lua ~/.config/hypr/hyprland.lua
+    ln -f hypr/hyprpaper.conf ~/.config/hypr/hyprpaper.conf
+
+    ln -f waybar/config.jsonc ~/.config/waybar/config.jsonc
+    ln -f waybar/style.css ~/.config/waybar/style.css
+    ;;
+esac
+echo "\n"
+
 . ~/.bashrc
