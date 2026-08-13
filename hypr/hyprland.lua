@@ -32,7 +32,7 @@ local terminal    = "kitty"
 local fileManager = "thunar"
 local menu        = "hyprlauncher"
 local browser     = "firefox"
-local daw         = "reaper"
+local daw         = "GDK_BACKEND=x11 reaper"
 
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
@@ -141,7 +141,10 @@ hl.config({
     animations = {
         enabled = true,
     },
+--    ["plugin.hyprbars.enabled"] = false,
+--    ["windowrulev2"] = { "plugin:hyprbars.bar,class=^(reaper)$", },
 })
+
 
 -- Default curves and animations, see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
 hl.curve("easeOutQuint",   { type = "bezier", points = { {0.23, 1},    {0.32, 1}    } })
