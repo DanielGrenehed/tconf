@@ -7,6 +7,7 @@ Plug('junegunn/fzf', { ['do'] = function() vim.fn['fzf#install']() end })
 Plug 'junegunn/fzf.vim'
 Plug 'shaunsingh/nord.nvim'
 Plug 'sainnhe/sonokai'
+Plug 'nyoom-engineering/oxocarbon.nvim'
 vim.call('plug#end')
 
 require('nvim-web-devicons')
@@ -22,6 +23,39 @@ require('nvim-tree').setup({
   },
 })
 
+local function get_os_theme()
+  if vim.fn.has("mac") == 1 then
+    local handle = io.popen("defaults read -g AppleInterfaceStyle 2>/dev/null")
+    if handle then
+      local result = handle:read("*a")
+      handle:close()
+
+      if result:match("Dark") then
+        return "dark"
+      end
+
+      return "light"
+    end
+  elseif vim.fn.has("unix") == 1 then
+    local handle = io.popen(
+      "gsettings get org.gnome.desktop.interface color-scheme 2>/dev/null"
+    )
+
+    if handle then
+      local result = handle:read("*a")
+      handle:close()
+
+      if result:match("prefer%-dark") then
+        return "dark"
+      elseif result:match("prefer%-light") then
+        return "light"
+      end
+    end
+  end
+
+  return "dark"
+end
+
 
 -- core vim config
 vim.cmd([[
@@ -36,6 +70,7 @@ vim.cmd([[
 	set smartindent
 ]])
 
+
 vim.g.python3_host_prog = '/usr/local/bin/python3'
 vim.g.markdown_fenced_languages = {'html', 'python', 'cpp', 'c', 'rust', 'vim', 'go'}
 
@@ -43,6 +78,14 @@ vim.g.markdown_fenced_languages = {'html', 'python', 'cpp', 'c', 'rust', 'vim', 
 vim.g.sonokai_style = 'maia'
 vim.g.sonokai_better_performance = 1
 vim.cmd[[colorscheme sonokai]]
+
+local theme = get_os_theme()
+vim.opt.background = theme
+if theme == "light" then
+  vim.cmd.colorscheme "oxocarbon"
+else
+  --vim.cmd.colorscheme("tokyonight-night")
+end
 
 -- default mapping on all systems
 vim.cmd([[
@@ -65,7 +108,6 @@ vim.cmd([[
 	map <silent> <S-Down> :resize -1<CR>
 	map <F23> :%!prettier --stdin-filepath %<CR> 
 ]])
-
 
 --[[
 function sys_command(command) 
