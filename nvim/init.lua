@@ -79,6 +79,8 @@ vim.g.sonokai_style = 'maia'
 vim.g.sonokai_better_performance = 1
 vim.cmd[[colorscheme sonokai]]
 
+vim.opt.ttimeoutlen = 0
+
 local theme = get_os_theme()
 vim.opt.background = theme
 if theme == "light" then
