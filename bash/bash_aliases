@@ -29,3 +29,7 @@ alias audiofix='systemctl --user restart wireplumber'
 alias crepo='~/.config/scripts/create_remote_repo.sh'
 alias grepo='~/.config/scripts/get_remote_repo.sh'
 
+mcd() {
+  mkdir "$1"
+  cd "$1"
+}
